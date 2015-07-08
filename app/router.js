@@ -8,6 +8,8 @@ var Router = Ember.Router.extend({
 Router.map(function() {
   this.route('old-style');
   this.route('new-style');
+  this.route('old-actions');
+  this.route('new-actions');
 });
 
 export default Router;
