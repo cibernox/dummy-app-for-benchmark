@@ -8,6 +8,13 @@ export default Ember.Component.extend({
     },
     remove() {
       this.sendAction('removeTaskAction', this.get('task'));
+    },
+    benchmark() {
+      console.time('old-actions-benchmark');
+      for (let i = 0; i < 10000; i++) {
+        this.sendAction('selectTaskAction', this.get('task'));
+      }
+      console.timeEnd('old-actions-benchmark');
     }
   }
 });
