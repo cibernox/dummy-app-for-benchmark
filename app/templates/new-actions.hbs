@@ -1,6 +1,6 @@
 <h2>New actions</h2>
 <br>
-{{input type="text" value=model.title id="homework-title"}}
+  <input id="homework-title" type="text" value={{model.title}} oninput={{action (mut model.title) value="target.value"}}>
 <br>
 <br>
 <ul class="nav nav-tabs">
@@ -10,9 +10,13 @@
     </li>
   {{/each}}
 </ul>
-{{#new-accordion-multi-form tray=selectedTray selected=selectedTask deleteTaskAction="deleteTaskFromTray" as |task|}}
-  <p>{{input type="text" value=task.title placeholder="Title"}}</p>
-  <p>{{input type="text" value=task.description placeholder="Description"}}</p>
+{{#new-accordion-multi-form tray=selectedTray selected=selectedTask removeTask=(action "deleteTaskFromTray" selectedTray) as |task|}}
+  <p>
+    <input type="text" value={{task.title}} placeholder="Title" oninput={{action (mut task.title) value="target.value"}}>
+  </p>
+  <p>
+    <input type="text" value={{task.description}} placeholder="Description" oninput={{action (mut task.description) value="target.value"}}>
+  </p>
 {{/new-accordion-multi-form}}
 <br>
 <br>

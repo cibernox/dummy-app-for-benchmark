@@ -11,8 +11,12 @@
   {{/each}}
 </ul>
 {{#accordion-multi-form tray=selectedTray selected=selectedTask deleteTaskAction="deleteTaskFromTray" as |task|}}
-  <p>{{input type="text" value=task.title placeholder="Title"}}</p>
-  <p>{{input type="text" value=task.description placeholder="Description"}}</p>
+  <p>
+    {{input type="text" value=task.title placeholder="Title"}}
+  </p>
+  <p>
+    {{input type="text" value=task.description placeholder="Description"}}
+  </p>
 {{/accordion-multi-form}}
 <br>
 <br>

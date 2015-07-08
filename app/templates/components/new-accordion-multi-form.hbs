@@ -1,5 +1,10 @@
 {{#each tray.tasks as |task|}}
-  {{#new-accordion-multi-form-item task=task active=(eq selected task) selectTaskAction="selectTask" deleteTaskAction="deleteTask"}}
+  {{#new-accordion-multi-form-item
+      task=task
+      active=(eq selected task)
+      select=(action "selectTask" task)
+      remove=(action removeTask task)}}
+
     {{yield task}}
   {{/new-accordion-multi-form-item}}
 {{/each}}
