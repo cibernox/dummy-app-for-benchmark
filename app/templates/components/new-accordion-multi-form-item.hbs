@@ -1,0 +1,13 @@
+<header>
+  <h3>{{task.title}}</h3>
+  <span class="actions">
+    <a href="#" {{action "selectEntry"}}>Select</a>
+    <a href="#" {{action "deleteEntry"}}>Delete</a>
+  </span>
+</header>
+{{#if active}}
+  <div class="form">
+    {{yield task}}
+    <button>Done</button>
+  </div>
+{{/if}}

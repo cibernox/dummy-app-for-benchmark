@@ -6,14 +6,14 @@
 <ul class="nav nav-tabs">
   {{#each model.trays as |tray index|}}
     <li class={{if (eq index tab) 'active'}}>
-      {{link-to tray.title "old-actions" (query-params tab=index)}}
+      {{link-to tray.title "new-actions" (query-params tab=index)}}
     </li>
   {{/each}}
 </ul>
-{{#accordion-multi-form tray=selectedTray selected=selectedTask deleteTaskAction="deleteTaskFromTray" as |task|}}
+{{#new-accordion-multi-form tray=selectedTray selected=selectedTask deleteTaskAction="deleteTaskFromTray" as |task|}}
   <p>{{input type="text" value=task.title placeholder="Title"}}</p>
   <p>{{input type="text" value=task.description placeholder="Description"}}</p>
-{{/accordion-multi-form}}
+{{/new-accordion-multi-form}}
 <br>
 <br>
 <button {{action "confirm"}}>Confirm</button>
