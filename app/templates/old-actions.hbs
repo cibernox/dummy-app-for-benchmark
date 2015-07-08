@@ -10,7 +10,7 @@
     </li>
   {{/each}}
 </ul>
-{{#accordion-multi-form tray=selectedTray selected=selectedTask deleteTaskAction="deleteTaskFromTray" as |task|}}
+{{#accordion-multi-form tray=selectedTray selected=selectedTask removeTaskAction="removeTaskFromTray" as |task|}}
   <p>
     {{input type="text" value=task.title placeholder="Title"}}
   </p>

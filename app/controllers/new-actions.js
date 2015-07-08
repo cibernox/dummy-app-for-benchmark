@@ -20,7 +20,7 @@ export default Ember.Controller.extend({
 
   // Actions
   actions: {
-    deleteTaskFromTray(tray, task) {
+    removeTaskFromTray(tray, task) {
       tray.get('tasks').removeObject(task);
       const deletedTasks = this.deletedTasksByTray.get(tray);
       if (!deletedTasks) {

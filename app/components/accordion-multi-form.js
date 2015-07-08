@@ -6,8 +6,8 @@ export default Ember.Component.extend({
       this.set('selected', task);
     },
 
-    deleteTask(task) {
-      this.sendAction('deleteTaskAction', this.get('tray'), task);
+    removeTask(task) {
+      this.sendAction('removeTaskAction', this.get('tray'), task);
     }
   }
 });
