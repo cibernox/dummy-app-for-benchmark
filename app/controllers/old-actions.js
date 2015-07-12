@@ -31,7 +31,7 @@ export default Ember.Controller.extend({
     },
 
     confirm() {
-      for (let [_, tasks] of this.deletedTasksByTray) {
+      for (let [, tasks] of this.deletedTasksByTray) {
         tasks.forEach(t => this.store.unloadRecord(t));
       }
       this.deletedTasksByTray.clear();
