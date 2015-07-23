@@ -1,14 +1,10 @@
 export default function() {
+  this.timing = 1000;      // delay for each request, automatically set to 0 during testing
 
-  // These comments are here to help you get started. Feel free to delete them.
-
-  /*
-    Config (with defaults).
-
-    Note: these only affect routes defined *after* them!
-  */
-  // this.namespace = '';    // make this `api`, for example, if your API is namespaced
-  // this.timing = 400;      // delay for each request, automatically set to 0 during testing
+  this.get('/contacts');
+  this.get('/contacts/:id');
+  this.post('/contacts');
+  this.put('/contacts/:id');
 
   /*
     Route shorthand cheatsheet

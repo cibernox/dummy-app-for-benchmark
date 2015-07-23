@@ -1,0 +1,17 @@
+<td>
+  <input type="text" value={{contact.name}} oninput={{action (mut contact.name) value="target.value"}}>
+</td>
+<td>
+  <input type="number" value={{contact.age}} oninput={{action (mut contact.age) value="target.value"}}>
+</td>
+<td>
+  Is new: {{contact.isNew}}
+</td>
+<td>
+  Is saving: {{contact.isSaving}}
+</td>
+<td>
+  {{dirtyAttributes}}
+</td>
+<td><button onclick={{action save attrs.contact}}>Save</button></td>
+

@@ -1,0 +1,30 @@
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Is saving</th>
+      <th>Dirty attributes</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{!-- {{#each model as |contact|}} --}}
+      {{contact-row contact=newContact save=(action 'save')}}
+      {{contact-row contact=model save=(action 'save')}}
+    {{!-- {{/each}} --}}
+  </tbody>
+</table>
+
+
+<p><strong>Inconsistent behavior:</strong></p>
+<p>
+  When a model is not yet persisted and it's saved, while the request is in progress the
+  `changedAttributes` are empty
+</p>
+<p>
+  When a model not new and it's updated, while the request is in progress the
+  `changedAttributes` contains the changed attributes until the save operation finishes.
+</p>
+<p>In both cases the model is considered dirty, but its unexpected that the changed attributes of the
+record being saved for the first time are cleared before the record has been confirmed as saved</p>

@@ -10,6 +10,7 @@ Router.map(function() {
   this.route('new-style');
   this.route('old-actions');
   this.route('new-actions');
+  this.route('ember-data-dirty-bug');
 });
 
 export default Router;
